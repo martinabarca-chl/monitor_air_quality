@@ -6,13 +6,12 @@
 # ============================================================
 
 # --- Paleta de colores CB (Color Blind friendly) ---
-# Colores diseñados para ser distinguibles por personas
-# con daltonismo (Color Universal Design).
+
 CB = {
     'blue':    '#0077BB',
     'cyan':    '#33BBEE',
     'teal':    '#009988',
-    'orange':  '#EE7733',
+    'orange':  '#F27C07',
     'red':     '#CC3311',
     'magenta': '#EE3377',
     'grey':    '#BBBBBB',

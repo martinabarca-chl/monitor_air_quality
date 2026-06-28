@@ -67,7 +67,7 @@ def register_callbacks(app):
             ['temperatura', 'mp2_5'],
             'Temperatura y MP2.5',
             'Valor',
-            [CB['red'], CB['orange']],
+            [CB['blue'], CB['red']],
         )
 
         fig.update_traces(
@@ -104,7 +104,7 @@ def register_callbacks(app):
             ['humedad', 'vel_viento'],
             'Humedad y Velocidad del Viento',
             'Valor',
-            [CB['blue'], CB['teal']],
+            [CB['blue'], CB['orange']],
         )
 
         fig.update_traces(
@@ -133,7 +133,7 @@ def register_callbacks(app):
         df = filter_by_year_month(df_raw, year, month)
         return scatter_with_trend(
             df, 'temperatura', 'mp2_5',
-            'Temperatura (°C)', 'MP2.5 (µg/m³)', CB['red'],
+            'Temperatura (°C)', 'MP2.5 (µg/m³)', '#CC3311',
         )
 
     # ----------------------------------------------------------
