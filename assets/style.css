@@ -1,5 +1,11 @@
+/* ============================================================
+   styles.css - Estilos del Dashboard de Calidad del Aire
+   ============================================================ */
+
+/* --- Reset básico --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* --- Estilos globales del body --- */
 body {
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     background-color: #f4f6f8;
@@ -7,11 +13,16 @@ body {
     line-height: 1.6;
 }
 
+/* --- Contenedor principal: centrado y con ancho máximo --- */
 .app-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px 20px;
 }
+
+/* ============================================================
+   ENCABEZADO (HEADER)
+   ============================================================ */
 
 .header {
     background: linear-gradient(90deg, #2c7be5 0%, #1a2a3a 100%);
@@ -27,23 +38,50 @@ body {
     align-items: center;
     gap: 20px;
 }
+
 .header-text h1 {
     font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: -0.5px;
     color: #fff;
 }
+
 .header-text p {
     font-size: 0.9rem;
     color: #d0e4f7;
     margin-top: 2px;
 }
+
+/* Logo de la universidad */
 .header-logo {
     height: 120px;
     width: auto;
     flex-shrink: 0;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
+
+/* Enlace al repositorio de GitHub (esquina derecha del header) */
+.header-gh-link {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-gh-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.header-gh-icon {
+    height: 32px;
+    width: auto;
+}
+
+/* ============================================================
+   FILTROS (AÑO / MES)
+   ============================================================ */
 
 .filters-section {
     margin: 16px 0 0;
@@ -62,6 +100,7 @@ body {
     max-width: 280px;
 }
 
+/* Etiqueta de cada filtro */
 .filter-label {
     display: block;
     font-size: 0.75rem;
@@ -72,6 +111,7 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Dropdown de filtro */
 .filter-dropdown .Select-control {
     border-radius: 6px;
     border-color: #ced4da;
@@ -84,10 +124,15 @@ body {
     line-height: 34px;
 }
 
+/* ============================================================
+   BARRA DE NAVEGACIÓN (TABS)
+   ============================================================ */
+
 .nav-bar {
     margin: 12px 0 16px;
 }
 
+/* Pestaña no seleccionada */
 .tab {
     background-color: #e9ecef !important;
     color: #495057 !important;
@@ -103,6 +148,7 @@ body {
     color: #212529 !important;
 }
 
+/* Pestaña activa */
 .tab-selected {
     background-color: #fff !important;
     color: #2c3e50 !important;
@@ -110,10 +156,15 @@ body {
     font-weight: 600 !important;
 }
 
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+
 .main-content {
     min-height: 500px;
 }
 
+/* Tarjeta contenedora de gráficos y secciones */
 .card {
     background: white;
     border-radius: 10px;
@@ -123,6 +174,7 @@ body {
     border: 1px solid #e9ecef;
 }
 
+/* Título de sección dentro de una card */
 .section-title {
     font-size: 1.05rem;
     font-weight: 600;
@@ -133,6 +185,11 @@ body {
     display: inline-block;
 }
 
+/* ============================================================
+   TARJETAS KPI (INDICADORES)
+   ============================================================ */
+
+/* Cuadrícula de 4 tarjetas */
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -140,6 +197,7 @@ body {
     margin-bottom: 22px;
 }
 
+/* Tarjeta individual */
 .kpi-card {
     background: white;
     border-radius: 10px;
@@ -177,6 +235,10 @@ body {
     margin-top: 4px;
 }
 
+/* ============================================================
+   CAJA NARRATIVA (INFORMACIÓN)
+   ============================================================ */
+
 .narrative-box {
     background: #e8f4fd;
     border-left: 4px solid #3498db;
@@ -191,6 +253,7 @@ body {
     align-items: flex-start;
 }
 
+/* Ícono circular de información */
 .narrative-icon {
     background: #3498db;
     color: white;
@@ -208,11 +271,16 @@ body {
     font-family: 'Georgia', serif;
 }
 
+/* Texto explicativo */
 .narrative-text {
     font-size: 0.88rem;
     color: #2c3e50;
     line-height: 1.6;
 }
+
+/* ============================================================
+   CONTROLES (SELECTOR DE AGREGACIÓN)
+   ============================================================ */
 
 .controls-row {
     display: flex;
@@ -249,12 +317,54 @@ body {
     min-height: 34px;
 }
 
+/* ============================================================
+   TABLA DE INFORMACIÓN DEL MEDIDOR
+   ============================================================ */
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.info-table tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 7px 8px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #495057;
+    width: 45%;
+    white-space: nowrap;
+}
+
+.info-value {
+    color: #212529;
+    text-align: right;
+}
+
+/* ============================================================
+   DISPOSICIÓN DE COLUMNAS
+   ============================================================ */
+
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 20px;
 }
+
+/* ============================================================
+   PIE DE PÁGINA (FOOTER)
+   ============================================================ */
 
 .footer {
     text-align: center;
@@ -272,13 +382,18 @@ body {
     text-decoration: none;
     font-weight: 500;
 }
+
 .footer-link:hover { text-decoration: underline; }
 
+/* ============================================================
+   RESPONSIVE - Adaptación a pantallas pequeñas
+   ============================================================ */
+
 @media (max-width: 768px) {
-    .two-column { grid-template-columns: 1fr; }
-    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .filters-row { flex-direction: column; }
+    .two-column { grid-template-columns: 1fr; }             /* Una columna en móvil */
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }    /* 2 KPIs por fila */
+    .filters-row { flex-direction: column; }                /* Filtros apilados */
     .filter-group { max-width: 100%; }
-    .controls-row { flex-direction: column; }
+    .controls-row { flex-direction: column; }               /* Controles apilados */
     .header-content h1 { font-size: 1.3rem; }
 }
